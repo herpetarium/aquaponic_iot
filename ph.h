@@ -39,11 +39,11 @@ void phControl() {
   if (phValue() < 4.5) {
     TelnetStream.println("LOWph");
     while (millis() - timepoint < 1000) {
-      digitalWrite(motor1Pin1, LOW);
-      digitalWrite(motor1Pin2, HIGH);
+      digitalWrite(motor1Pin1, HIGH);
+      digitalWrite(motor1Pin2, LOW);
     }
     digitalWrite(motor1Pin1, LOW);
-    digitalWrite(motor1Pin2, HIGH);
+    digitalWrite(motor1Pin2, LOW);
   }
   else if (phValue() > 7.5) {
     TelnetStream.println("HIGHph");
